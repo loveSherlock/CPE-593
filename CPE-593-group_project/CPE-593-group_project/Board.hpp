@@ -154,18 +154,78 @@ private:
     }
     void check_top_right(vector<vector<bool>>&needChange,pair<int,int>position)
     {
-        if(position.first!=0 && position.second!=7)
+        if(position.first==0 || position.second==7)
             return;
+        if(status[position.first-1][position.second+1]==10 || status[position.first-1][position.second+1]==turn)
+            return;
+        bool flag=false;
+        int i=position.first-2;
+        int j=position.second+2;
+        for(;i>=0 && j<8;i--,j++)
+        {
+            if(status[i][j]==turn)
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag)
+        {
+            for(int x=position.first-1,y=position.second+1;x>=i && y<=j;x--,y++)
+            {
+                needChange[x][y]=true;
+            }
+        }
     }
     void check_bottom_left(vector<vector<bool>>&needChange,pair<int,int>position)
     {
-        if(position.first!=7 && position.second!=0)
+        if(position.first==7 || position.second==0)
             return;
+        if(status[position.first+1][position.second-1]==10 || status[position.first+1][position.second-1]==turn)
+            return;
+        bool flag=false;
+        int i=position.first+2;
+        int j=position.second-2;
+        for(;i<8 && j>=0;i++,j--)
+        {
+            if(status[i][j]==turn)
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag)
+        {
+            for(int x=position.first-1,y=position.second-1;x<=i && y>=j;x++,y--)
+            {
+                needChange[x][y]=true;
+            }
+        }
     }
     void check_bottom_right(vector<vector<bool>>&needChange,pair<int,int>position)
     {
-        if(position.first!=7 && position.second!=7)
+        if(position.first==7 || position.second==7)
             return;
+        if(status[position.first+1][position.second+1]==10 || status[position.first+1][position.second+1]==turn)
+            return;
+        bool flag=false;
+        int i=position.first+2;
+        int j=position.second+2;
+        for(;i<8 && j<8;i++,j++)
+        {
+            if(status[i][j]==turn)
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag)
+        {
+            for(int x=position.first+1,y=position.second+1;x<=i && y<=j;x++,y++)
+            {
+                needChange[x][y]=true;
+            }
+        }
     }
     void updateBoard(pair<int,int>position)//某一步棋之后更新棋盘状态
     {
