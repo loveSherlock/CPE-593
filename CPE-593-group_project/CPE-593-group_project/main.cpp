@@ -34,5 +34,10 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     Board a;
     a.display();
+    pair<int,int>test;
+    test.first=5;
+    test.second=4;
+    a.setChess(test);
+    a.display();
     return 0;
 }
