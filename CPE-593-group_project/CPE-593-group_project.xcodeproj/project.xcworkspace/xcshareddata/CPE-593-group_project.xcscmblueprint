@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F4D915CA0B587FFB634EFFBCAC30F8873CA8312F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F4D915CA0B587FFB634EFFBCAC30F8873CA8312F" : 0,
+    "5E4C801480677784B56FCC3BB71426A85BD8CCB3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C775A7DB-F99D-4235-A1F1-D66582CBCDC0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F4D915CA0B587FFB634EFFBCAC30F8873CA8312F" : "CPE-593\/",
+    "5E4C801480677784B56FCC3BB71426A85BD8CCB3" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CPE-593-group_project",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CPE-593-group_project\/CPE-593-group_project.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:loveSherlock\/learngit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5E4C801480677784B56FCC3BB71426A85BD8CCB3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:loveSherlock\/CPE-593.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F4D915CA0B587FFB634EFFBCAC30F8873CA8312F"
+    }
+  ]
+}
