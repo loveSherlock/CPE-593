@@ -59,21 +59,98 @@ private:
     {
         if(position.first==7)
             return;
+        if(status[position.first+1][position.second]==10 || status[position.first+1][position.second]==turn)
+            return;
+        bool flag=false;
+        int i=position.first+2;
+        for(;i<8;i++)
+        {
+            if(status[i][position.second]==turn)
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag)
+        {
+            for(int x=position.first+1;x<=i;x++)
+            {
+                needChange[x][position.second]=true;
+            }
+        }
     }
     void check_left(vector<vector<bool>>&needChange,pair<int,int>position)
     {
         if(position.second==0)
             return;
+        if(status[position.first][position.second-1]==10 || status[position.first][position.second-1]==turn)
+            return;
+        bool flag=false;
+        int j=position.second-2;
+        for(;j>=0;j--)
+        {
+            if(status[position.first][j]==turn)
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag)
+        {
+            for(int x=position.second-1;x>=j;x--)
+            {
+                needChange[position.first][x]=true;
+            }
+        }
     }
     void check_right(vector<vector<bool>>&needChange,pair<int,int>position)
     {
         if(position.second==7)
             return;
+        if(status[position.first][position.second+1]==10 || status[position.first][position.second+1]==turn)
+            return;
+        bool flag=false;
+        int j=position.second+2;
+        for(;j<8;j++)
+        {
+            if(status[position.first][j]==turn)
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag)
+        {
+            for(int x=position.second+1;x<j;x++)
+            {
+                needChange[position.first][x]=true;
+            }
+        }
     }
     void check_top_left(vector<vector<bool>>&needChange,pair<int,int>position)
     {
-        if(position.first!=0 && position.second!=0)
+        if(position.first==0 || position.second==0)
             return;
+        if(status[position.first-1][position.second-1]==10 || status[position.first-1][position.second-1]==turn)
+            return;
+        bool flag=false;
+        int i=position.first-2;
+        int j=position.second-2;
+        for(;i>=0 && j>=0;i--,j--)
+        {
+            if(status[i][j]==turn)
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag)
+        {
+            for(int x=position.first-1,y=position.second-1;x>=i && y>=j;x--,y--)
+            {
+                needChange[x][y]=true;
+            }
+        }
     }
     void check_top_right(vector<vector<bool>>&needChange,pair<int,int>position)
     {

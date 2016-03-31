@@ -39,5 +39,10 @@ int main(int argc, const char * argv[]) {
     test.second=4;
     a.setChess(test);
     a.display();
+    test.first=5;
+    test.second=5;
+    a.changeTurn();
+    a.setChess(test);
+    a.display();
     return 0;
 }
