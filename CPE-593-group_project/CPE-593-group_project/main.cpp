@@ -6,27 +6,9 @@
 //  Copyright © 2016年 FANXUEZHOU. All rights reserved.
 //
 
-#include <iostream>
-#include <string.h>
-#include <cstring>
-#include <vector>
-#include <sstream>
-#include <cmath>
-#include <algorithm>
-#include <deque>
-#include <stack>
-#include <queue>
-#include <set>
-#include <map>
-#include <random>
-#include <bitset>
-#include <unordered_map>
-#include <unordered_set>
-#include <memory>
-#include <list>
-#include <fstream>
 #include "Board.hpp"
-
+#include "Player.hpp"
+#include "Player_human.hpp"
 using namespace::std;
 
 int main(int argc, const char * argv[]) {
@@ -34,15 +16,16 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     Board a;
     a.display();
-    pair<int,int>test;
-    test.first=5;
-    test.second=4;
-    a.setChess(test);
-    a.display();
-    test.first=5;
-    test.second=5;
-    a.changeTurn();
-    a.setChess(test);
-    a.display();
+    Player_human human;
+    while(1){
+        human.getSituation(a.getSitution(), a.getTurn());
+        pair<int,int>temp=human.chosePosition();
+        while (!a.testValid(temp)) {
+            temp=human.chosePosition();
+        }
+        a.setChess(temp);
+        a.display();
+        a.changeTurn();
+    }
     return 0;
 }
