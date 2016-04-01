@@ -298,6 +298,8 @@ public:
     bool testValid(pair<int,int>position)
     {
         bool flag=false;
+        if(status[position.first][position.second]!=10)
+            return flag;
         vector<vector<bool>>test(8,vector<bool>(8,false));
         //上
         flag |=check_above(test, position);
