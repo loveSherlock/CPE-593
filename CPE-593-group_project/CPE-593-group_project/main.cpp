@@ -7,8 +7,9 @@
 //
 
 #include "Board.hpp"
-#include "Player.hpp"
 #include "Player_human.hpp"
+#include "Administer.hpp"
+
 using namespace::std;
 
 int main(int argc, const char * argv[]) {
@@ -18,14 +19,14 @@ int main(int argc, const char * argv[]) {
     a.display();
     Player_human human;
     while(1){
-        human.getSituation(a.getSitution(), a.getTurn());
-        pair<int,int>temp=human.chosePosition();
-        while (!a.testValid(temp)) {
-            temp=human.chosePosition();
-        }
-        a.setChess(temp);
-        a.display();
-        a.changeTurn();
+//        human.getSituation(a.getSitution(), a.getTurn());
+//        pair<int,int>temp=human.chosePosition();
+//        while (!a.testValid(temp)) {
+//            temp=human.chosePosition();
+//        }
+//        a.setChess(temp);
+//        a.display();
+//        a.changeTurn();
     }
     return 0;
 }

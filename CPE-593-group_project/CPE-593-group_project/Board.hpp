@@ -30,8 +30,8 @@ class Board{
 private:
     vector<vector<int>> status;//0--黑棋 1--白棋 10--空
     vector<pair<int,int>> sequence;//以下棋子的序列（只存放下子的位置）用于悔棋
-    bool turn;//当前执方 0--黑棋 1--白棋
-    bool check_above(vector<vector<bool>>&needChange,pair<int,int>position)
+    //bool turn;//当前执方 0--黑棋 1--白棋
+    bool check_above(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         if(position.first<=1)
             return false;
@@ -56,7 +56,7 @@ private:
         }
         return flag;
     }
-    bool check_below(vector<vector<bool>>&needChange,pair<int,int>position)
+    bool check_below(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         if(position.first==7)
             return false;
@@ -81,7 +81,7 @@ private:
         }
         return flag;
     }
-    bool check_left(vector<vector<bool>>&needChange,pair<int,int>position)
+    bool check_left(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
         if(position.second==0)
@@ -106,7 +106,7 @@ private:
         }
         return flag;
     }
-    bool check_right(vector<vector<bool>>&needChange,pair<int,int>position)
+    bool check_right(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
         if(position.second==7)
@@ -131,7 +131,7 @@ private:
         }
         return flag;
     }
-    bool check_top_left(vector<vector<bool>>&needChange,pair<int,int>position)
+    bool check_top_left(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
         if(position.first==0 || position.second==0)
@@ -157,7 +157,7 @@ private:
         }
         return flag;
     }
-    bool check_top_right(vector<vector<bool>>&needChange,pair<int,int>position)
+    bool check_top_right(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
         if(position.first==0 || position.second==7)
@@ -183,7 +183,7 @@ private:
         }
         return flag;
     }
-    bool check_bottom_left(vector<vector<bool>>&needChange,pair<int,int>position)
+    bool check_bottom_left(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
         if(position.first==7 || position.second==0)
@@ -209,7 +209,7 @@ private:
         }
         return flag;
     }
-    bool check_bottom_right(vector<vector<bool>>&needChange,pair<int,int>position)
+    bool check_bottom_right(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
         if(position.first==7 || position.second==7)
@@ -235,7 +235,7 @@ private:
         }
         return flag;
     }
-    void changeBoard(vector<vector<bool>>& needChange)
+    void changeBoard(vector<vector<bool>>& needChange,bool turn)
     {
         for(int i=0;i<8;i++)
         {
@@ -246,44 +246,44 @@ private:
             }
         }
     }
-    void updateBoard(pair<int,int>position)//某一步棋之后更新棋盘状态
+    void updateBoard(pair<int,int>position,bool turn)//某一步棋之后更新棋盘状态
     {
 //        int i=position.first;
 //        int j=position.second;
         vector<vector<bool>> needChange(8,vector<bool>(8,false));//false 不改变 true 改变为当前执方
         //检查正上方
-        check_above(needChange, position);
+        check_above(needChange, position,turn);
 //        changeBoard(needChange);
 //        display();
         //检查正下方
-        check_below(needChange, position);
+        check_below(needChange, position,turn);
 //        changeBoard(needChange);
 //        display();
         //检查左边
-        check_left(needChange, position);
+        check_left(needChange, position,turn);
 //        changeBoard(needChange);
 //        display();
         //检查右边
-        check_right(needChange, position);
+        check_right(needChange, position,turn);
 //        changeBoard(needChange);
 //        display();
         //左上
-        check_top_left(needChange, position);
+        check_top_left(needChange, position,turn);
 //        changeBoard(needChange);
 //        display();
         //右上
-        check_top_right(needChange, position);
+        check_top_right(needChange, position,turn);
 //        changeBoard(needChange);
 //        display();
         //左下
-        check_bottom_left(needChange, position);
+        check_bottom_left(needChange, position,turn);
 //        changeBoard(needChange);
 //        display();
         //右下
-        check_bottom_right(needChange,position);
+        check_bottom_right(needChange,position,turn);
 //        changeBoard(needChange);
 //        display();
-        changeBoard(needChange);
+        changeBoard(needChange,turn);
     }
 public:
     Board()
@@ -293,30 +293,30 @@ public:
         status[4][4]=1;
         status[3][4]=0;
         status[4][3]=0;
-        turn=0;
+        //turn=0;
     }
-    bool testValid(pair<int,int>position)
+    bool testValid(pair<int,int>position,bool turn)
     {
         bool flag=false;
         if(status[position.first][position.second]!=10)
             return flag;
         vector<vector<bool>>test(8,vector<bool>(8,false));
         //上
-        flag |=check_above(test, position);
+        flag |=check_above(test, position,turn);
         //下
-        flag |=check_below(test,position);
+        flag |=check_below(test,position,turn);
         //左
-        flag |=check_left(test, position);
+        flag |=check_left(test, position,turn);
         //右
-        flag |=check_right(test, position);
+        flag |=check_right(test, position,turn);
         //左上
-        flag |=check_top_left(test, position);
+        flag |=check_top_left(test, position,turn);
         //右上
-        flag |=check_top_right(test, position);
+        flag |=check_top_right(test, position,turn);
         //左下
-        flag |=check_bottom_left(test, position);
+        flag |=check_bottom_left(test, position,turn);
         //右下
-        flag |=check_bottom_right(test,position);
+        flag |=check_bottom_right(test,position,turn);
         
         return flag;
     }
@@ -324,10 +324,10 @@ public:
     {
         return status;
     }
-    bool getTurn()
-    {
-        return turn;
-    }
+//    bool getTurn()
+//    {
+//        return turn;
+//    }
 //    void display_status()
 //    {
 //        for(int i=0;i<8;i++)
@@ -339,16 +339,16 @@ public:
 //            cout <<endl;
 //        }
 //    }
-    void setChess(pair<int,int>position)
+    void setChess(pair<int,int>position,bool turn)
     {
         sequence.push_back(position);
         status[position.first][position.second]=turn;
-        updateBoard(position);
+        updateBoard(position,turn);
     }
-    void changeTurn()//更换执方
-    {
-        turn=!turn;
-    }
+//    void changeTurn()//更换执方
+//    {
+//        turn=!turn;
+//    }
     void display()
     {
         for(int i=0;i<=8;i++)

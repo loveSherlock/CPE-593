@@ -28,6 +28,7 @@
 		2B310B571CAD6643003E62D0 /* Board.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Board.hpp; sourceTree = "<group>"; };
 		2B310B591CAD9697003E62D0 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		2B310B5A1CADA25F003E62D0 /* Player_human.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player_human.hpp; sourceTree = "<group>"; };
+		2B310B5C1CB0C2E9003E62D0 /* Administer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Administer.hpp; path = ../Administer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		2B310B4E1CAD5D87003E62D0 /* CPE-593-group_project */ = {
 			isa = PBXGroup;
 			children = (
+				2B310B5C1CB0C2E9003E62D0 /* Administer.hpp */,
 				2B310B4F1CAD5D87003E62D0 /* main.cpp */,
 				2B310B591CAD9697003E62D0 /* Player.hpp */,
 				2B310B571CAD6643003E62D0 /* Board.hpp */,
