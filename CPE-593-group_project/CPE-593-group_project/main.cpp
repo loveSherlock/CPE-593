@@ -15,10 +15,10 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     srand((unsigned)time(NULL));
-    Player *player1=new Player_human;
+    Player *player1=new Player_random;
     Player *player2=new Player_random;
     Administer a(player1,player2);
     while(a.run());
-    
+    a.checkWinner();
     return 0;
 }

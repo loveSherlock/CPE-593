@@ -364,6 +364,27 @@ public:
         }
         return false;
     }
+    int checkWinner()
+    {
+        int player1=0;
+        int player2=0;
+        for(int i=0;i<8;i++)
+        {
+            for(int j=0;j<8;j++)
+            {
+                if(status[i][j]==0)
+                    player1++;
+                else if(status[i][j]==1)
+                    player2++;
+            }
+        }
+        if(player1>player2)
+            return 1;
+        else if(player2>player1)
+            return 2;
+        else
+            return 0;
+    }
     void display()
     {
         for(int i=0;i<=8;i++)

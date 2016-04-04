@@ -17,7 +17,7 @@ private:
     bool turn;
 public:
     Player_random(){
-        name="human_player";
+        name="random_player";
     }
     void getSituation(const vector<vector<int>>&stat,bool t)
     {

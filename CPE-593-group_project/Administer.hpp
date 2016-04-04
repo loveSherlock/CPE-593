@@ -47,17 +47,27 @@ public:
     bool run()
     {
         board->display();
-        cout <<"now is player";
-        !turn? cout <<"1-"<<player1->getName():cout <<"2-"<<player2->getName();
-        cout <<"' turn(";
-        !turn? cout <<"black":cout <<"white";
-        cout <<")"<<endl;
         //判断是否还有位置下
         if(!board->isAnyValid())
             return false;
+        cout <<"now is player";
+        !turn? cout <<"1-"<<player1->getName():cout <<"2-"<<player2->getName();
+        cout <<" turn(";
+        !turn? cout <<"black":cout <<"white";
+        cout <<")"<<endl;
         if(!checkAndSet())
             cout <<"there is no position can put the chess, skip this round."<<endl;
         turn=!turn;
         return true;
+    }
+    void checkWinner()
+    {
+        int ans=board->checkWinner();
+        if(ans==0)
+            cout<<"DRAW!!!"<<endl;
+        if(ans==1)
+            cout <<"Player1-"<<player1->getName()<<": is Winner!!"<<endl;
+        if(ans==2)
+            cout <<"Player2-"<<player2->getName()<<": is Winner!!"<<endl;
     }
 };
