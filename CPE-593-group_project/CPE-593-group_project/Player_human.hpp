@@ -17,13 +17,14 @@ public:
 //    }
     Player_human()
     {
+         name="human_player";
     }
     void getSituation(const vector<vector<int>>&status,bool t){
         turn=t;
     }
     pair<int,int> chosePosition(){
-        cout << "now you are ";
-        turn?cout <<"white one\n":cout <<"black one\n";
+//        cout << "now you are ";
+//        turn?cout <<"white one\n":cout <<"black one\n";
         cout << "please input the point you want to chose:\n";
         pair<int,int>ans;
         int i;
@@ -33,5 +34,8 @@ public:
         ans.second=j-1;
         return ans;
     }
-
+    string getName()
+    {
+        return name;
+    }
 };

@@ -298,6 +298,8 @@ public:
     bool testValid(pair<int,int>position,bool turn)
     {
         bool flag=false;
+        if(position.first>=8 || position.first<0 || position.second>=8 || position.second<0)
+            return false;
         if(status[position.first][position.second]!=10)
             return flag;
         vector<vector<bool>>test(8,vector<bool>(8,false));
@@ -320,7 +322,22 @@ public:
         
         return flag;
     }
-    
+    vector<pair<int,int>> optionalPosition(bool turn)
+    {
+        vector<pair<int,int>> ans;
+        for(int i=0;i<8;i++)
+        {
+            for(int j=0;j<8;j++)
+            {
+                pair<int,int>temp;
+                temp.first=i;
+                temp.second=j;
+                if(testValid(temp, turn))
+                    ans.push_back(temp);
+            }
+        }
+        return ans;
+    }
     const vector<vector<int>>& getSitution()
     {
         return status;
@@ -350,6 +367,16 @@ public:
 //    {
 //        turn=!turn;
 //    }
+    bool isAnyValid()
+    {
+        for(int i=0;i<8;i++)
+        {
+            for(int j=0;j<8;j++)
+                if(status[i][j]==10)
+                    return true;
+        }
+        return false;
+    }
     void display()
     {
         for(int i=0;i<=8;i++)

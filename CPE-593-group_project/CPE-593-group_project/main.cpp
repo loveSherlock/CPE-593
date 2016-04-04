@@ -14,18 +14,10 @@ using namespace::std;
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    Board a;
-    a.display();
-    Player_human human;
-    while(1){
-//        human.getSituation(a.getSitution(), a.getTurn());
-//        pair<int,int>temp=human.chosePosition();
-//        while (!a.testValid(temp)) {
-//            temp=human.chosePosition();
-//        }
-//        a.setChess(temp);
-//        a.display();
-//        a.changeTurn();
-    }
+    Player_human *player1=new Player_human;
+    Player_human *player2=new Player_human;
+    Administer a(player1,player2);
+    while(a.run());
+    
     return 0;
 }

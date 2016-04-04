@@ -5,6 +5,9 @@
 //  Created by FANXUEZHOU on 16/3/31.
 //  Copyright © 2016年 FANXUEZHOU. All rights reserved.
 //
+#ifndef __PLAYER__H_
+#define __PLAYER__H_
+
 #include <iostream>
 #include <string.h>
 #include <cstring>
@@ -27,13 +30,15 @@
 using namespace::std;
 
 class Player{
-private:
-    
+protected:
+    string name;
 public:
     Player(){
-        
+       
     }
     //virtual vector<pair<int,int>> findOption()=0;
     virtual void getSituation(const vector<vector<int>>&status,bool turn)=0;
     virtual pair<int,int> chosePosition()=0;
+    virtual string getName()=0;
 };
+#endif
