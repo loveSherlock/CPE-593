@@ -36,7 +36,7 @@ public:
     Player(){
        
     }
-    //virtual vector<pair<int,int>> findOption()=0;
+    virtual void findOption(const vector<pair<int,int>> &optionPosition)=0;
     virtual void getSituation(const vector<vector<int>>&status,bool turn)=0;
     virtual pair<int,int> chosePosition()=0;
     virtual string getName()=0;

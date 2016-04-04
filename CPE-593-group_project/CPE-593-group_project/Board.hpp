@@ -342,21 +342,6 @@ public:
     {
         return status;
     }
-//    bool getTurn()
-//    {
-//        return turn;
-//    }
-//    void display_status()
-//    {
-//        for(int i=0;i<8;i++)
-//        {
-//            for(int j=0;j<8;j++)
-//            {
-//                cout << status[i][j]<<" ";
-//            }
-//            cout <<endl;
-//        }
-//    }
     void setChess(pair<int,int>position,bool turn)
     {
         sequence.push_back(position);
@@ -372,8 +357,10 @@ public:
         for(int i=0;i<8;i++)
         {
             for(int j=0;j<8;j++)
-                if(status[i][j]==10)
+            {
+                if(testValid(pair<int,int>(i,j), 0) || testValid(pair<int,int>(i,j), 1))
                     return true;
+            }
         }
         return false;
     }
