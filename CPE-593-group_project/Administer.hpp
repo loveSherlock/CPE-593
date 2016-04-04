@@ -46,10 +46,10 @@ public:
     {
         board->display();
         cout <<"now is player";
-        !turn? cout <<"1":cout <<"2";
+        !turn? cout <<"1-"<<player1->getName():cout <<"2-"<<player2->getName();
         cout <<"' turn(";
         !turn? cout <<"black":cout <<"white";
-        cout <<" one)"<<endl;
+        cout <<")"<<endl;
         //判断是否还有位置下
         if(!board->isAnyValid())
             return false;
