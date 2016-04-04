@@ -60,6 +60,22 @@ public:
         turn=!turn;
         return true;
     }
+    bool run_for_factory()
+    {
+        //board->display();
+        //判断是否还有位置下
+        if(!board->isAnyValid())
+            return false;
+        //cout <<"now is player";
+        //!turn? cout <<"1-"<<player1->getName():cout <<"2-"<<player2->getName();
+        //cout <<" turn(";
+        //!turn? cout <<"black":cout <<"white";
+        //cout <<")"<<endl;
+        if(!checkAndSet());
+            //cout <<"there is no position can put the chess, skip this round."<<endl;
+        turn=!turn;
+        return true;
+    }
     void checkWinner()
     {
         int ans=board->checkWinner();
@@ -69,5 +85,24 @@ public:
             cout <<"Player1-"<<player1->getName()<<": is Winner!!"<<endl;
         if(ans==2)
             cout <<"Player2-"<<player2->getName()<<": is Winner!!"<<endl;
+    }
+    void factory()
+    {
+        int repeat=100;
+        int pl1=0;
+        int pl2=0;
+        while(repeat)
+        {
+            repeat--;
+            board=new Board();
+            while(run_for_factory());
+            int temp=board->checkWinner();
+            if(temp==1)
+                pl1++;
+            else if(temp==2)
+                pl2++;
+        }
+        cout << "player1-"<<player1->getName()<<" win "<< pl1<<" times."<<endl;
+        cout << "player2-"<<player2->getName()<<" win "<< pl2<<" times."<<endl;
     }
 };

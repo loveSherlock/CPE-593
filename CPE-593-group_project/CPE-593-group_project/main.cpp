@@ -18,7 +18,8 @@ int main(int argc, const char * argv[]) {
     Player *player1=new Player_random;
     Player *player2=new Player_random;
     Administer a(player1,player2);
-    while(a.run());
-    a.checkWinner();
+//    while(a.run());
+//    a.checkWinner();
+    a.factory();
     return 0;
 }
