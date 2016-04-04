@@ -6,7 +6,6 @@
 //  Copyright © 2016年 FANXUEZHOU. All rights reserved.
 //
 
-#include "Board.hpp"
 #include "Player_human.hpp"
 #include "Administer.hpp"
 
