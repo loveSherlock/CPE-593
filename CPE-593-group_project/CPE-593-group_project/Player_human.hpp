@@ -7,7 +7,7 @@
 //
 
 
-
+#include "Player.hpp"
 class Player_human:public Player{
 private:
     bool turn;

@@ -320,7 +320,8 @@ public:
         
         return flag;
     }
-    const vector<vector<int>> getSitution()
+    
+    const vector<vector<int>>& getSitution()
     {
         return status;
     }
