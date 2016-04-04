@@ -10,17 +10,14 @@
 #include "Player.hpp"
 class Player_human:public Player{
 private:
-    bool turn;
+    //bool turn;
 public:
-//    vector<pair<int,int>> findOption(){
-//        
-//    }
     Player_human()
     {
          name="human_player";
     }
     void getSituation(const vector<vector<int>>&status,bool t){
-        turn=t;
+        //turn=t;
     }
     pair<int,int> chosePosition(){
 //        cout << "now you are ";
@@ -37,5 +34,8 @@ public:
     string getName()
     {
         return name;
+    }
+    void findOption(const vector<pair<int,int>> & optionPosition){
+        
     }
 };

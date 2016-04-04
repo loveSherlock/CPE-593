@@ -8,14 +8,15 @@
 
 #include "Player_human.hpp"
 #include "Administer.hpp"
-
+#include "Player_random.hpp"
 using namespace::std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    Player_human *player1=new Player_human;
-    Player_human *player2=new Player_human;
+    srand((unsigned)time(NULL));
+    Player *player1=new Player_human;
+    Player *player2=new Player_random;
     Administer a(player1,player2);
     while(a.run());
     
