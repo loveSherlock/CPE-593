@@ -25,13 +25,7 @@ private:
         //判断是否还有位置下
         if(!board->isAnyValid())
             return false;
-        //cout <<"now is player";
-        //!turn? cout <<"1-"<<player1->getName():cout <<"2-"<<player2->getName();
-        //cout <<" turn(";
-        //!turn? cout <<"black":cout <<"white";
-        //cout <<")"<<endl;
         checkAndSet();
-        //cout <<"there is no position can put the chess, skip this round."<<endl;
         turn=!turn;
         return true;
     }

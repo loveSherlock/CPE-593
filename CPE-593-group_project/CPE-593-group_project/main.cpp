@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     Player *player1=new Player_random;
     Player *player2=new Player_random;
     Administer a(player1,player2);
-    a.factory();
-    //a.playStepByStep();
+    //a.factory();
+    a.playStepByStep();
     return 0;
 }
