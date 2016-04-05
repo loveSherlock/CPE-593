@@ -32,13 +32,26 @@ using namespace::std;
 class Player{
 protected:
     string name;
+    vector<vector<int>> status;
+    vector<pair<int,int>> optionPosition;
+    bool turn;
 public:
     Player(){
        
     }
-    virtual void findOption(const vector<pair<int,int>> &optionPosition)=0;
-    virtual void getSituation(const vector<vector<int>>&status,bool turn)=0;
+//    virtual void findOption(const vector<pair<int,int>> &optionPosition)=0;
+//    virtual void getSituation(const vector<vector<int>>&status,bool turn)=0;
     virtual pair<int,int> chosePosition()=0;
     virtual string getName()=0;
+    void getSituation(const vector<vector<int>>&stat,bool t)
+    {
+        turn=t;
+        status=stat;
+        
+    }
+    void findOption(const vector<pair<int,int>> &OP)
+    {
+        optionPosition=OP;
+    }
 };
 #endif

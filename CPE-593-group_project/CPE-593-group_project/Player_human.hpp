@@ -16,9 +16,6 @@ public:
     {
          name="human_player";
     }
-    void getSituation(const vector<vector<int>>&status,bool t){
-        //turn=t;
-    }
     pair<int,int> chosePosition(){
 //        cout << "now you are ";
 //        turn?cout <<"white one\n":cout <<"black one\n";
@@ -34,8 +31,5 @@ public:
     string getName()
     {
         return name;
-    }
-    void findOption(const vector<pair<int,int>> & optionPosition){
-        
     }
 };

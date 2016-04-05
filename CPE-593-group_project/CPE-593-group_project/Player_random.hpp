@@ -12,19 +12,16 @@
 
 class Player_random:public Player{
 private:
-    vector<vector<int>> status;
-    vector<pair<int,int>> optionPosition;
-    bool turn;
 public:
     Player_random(){
         name="random_player";
     }
-    void getSituation(const vector<vector<int>>&stat,bool t)
-    {
-        turn=t;
-        status=stat;
-        
-    }
+//    void getSituation(const vector<vector<int>>&stat,bool t)
+//    {
+//        turn=t;
+//        status=stat;
+//        
+//    }
     pair<int,int> chosePosition()
     {
         int length=(int)optionPosition.size();
@@ -34,10 +31,10 @@ public:
     string getName(){
         return name;
     }
-    void findOption(const vector<pair<int,int>> &OP)
-    {
-        optionPosition=OP;
-    }
+//    void findOption(const vector<pair<int,int>> &OP)
+//    {
+//        optionPosition=OP;
+//    }
 };
 
 

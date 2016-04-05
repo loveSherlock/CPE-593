@@ -12,20 +12,11 @@
 
 class Player_awesome:public Player{
 private:
-    vector<vector<int>> status;
-    vector<pair<int,int>> optionPosition;
-    bool turn;
     Weight_chart *weightChart;
 public:
     Player_awesome(Weight_chart *wc){
         name="awesome_player";
         weightChart = wc;
-    }
-    void getSituation(const vector<vector<int>>&stat,bool t)
-    {
-        turn=t;
-        status=stat;
-        
     }
     pair<int,int> chosePosition()
     {
@@ -33,10 +24,6 @@ public:
     }
     string getName(){
         return name;
-    }
-    void findOption(const vector<pair<int,int>> &OP)
-    {
-        optionPosition=OP;
     }
 };
 

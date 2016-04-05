@@ -11,9 +11,9 @@
 #include "Player.hpp"
 class Player_greedy:public Player{
 private:
-    vector<vector<int>> status;
-    vector<pair<int,int>> optionPosition;
-    bool turn;
+//    vector<vector<int>> status;
+//    vector<pair<int,int>> optionPosition;
+//    bool turn;
     int count()
     {
         int player1=0;
@@ -276,17 +276,8 @@ public:
     Player_greedy(){
         name="greedy_player";
     }
-    void getSituation(const vector<vector<int>>&stat,bool t)
-    {
-        turn=t;
-        status=stat;
-    }
     string getName(){
         return name;
-    }
-    void findOption(const vector<pair<int,int>> &OP)
-    {
-        optionPosition=OP;
     }
     pair<int,int> chosePosition()
     {
