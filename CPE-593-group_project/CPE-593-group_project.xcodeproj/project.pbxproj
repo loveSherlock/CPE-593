@@ -31,6 +31,9 @@
 		2B310B5C1CB0C2E9003E62D0 /* Administer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Administer.hpp; path = ../Administer.hpp; sourceTree = "<group>"; };
 		2B310B5D1CB2A759003E62D0 /* Player_random.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player_random.hpp; sourceTree = "<group>"; };
 		2B310B5F1CB2C335003E62D0 /* Player_greedy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Player_greedy.hpp; path = ../Player_greedy.hpp; sourceTree = "<group>"; };
+		2B9038C81CB3653E001D8311 /* Weight_chart.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Weight_chart.hpp; sourceTree = "<group>"; };
+		2B9038C91CB36565001D8311 /* Player_awesome.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player_awesome.hpp; sourceTree = "<group>"; };
+		2B9038CA1CB36583001D8311 /* Weight_chart_fixed.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Weight_chart_fixed.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,9 @@
 				2B310B5A1CADA25F003E62D0 /* Player_human.hpp */,
 				2B310B5D1CB2A759003E62D0 /* Player_random.hpp */,
 				2B310B5F1CB2C335003E62D0 /* Player_greedy.hpp */,
+				2B9038C81CB3653E001D8311 /* Weight_chart.hpp */,
+				2B9038C91CB36565001D8311 /* Player_awesome.hpp */,
+				2B9038CA1CB36583001D8311 /* Weight_chart_fixed.hpp */,
 			);
 			path = "CPE-593-group_project";
 			sourceTree = "<group>";
