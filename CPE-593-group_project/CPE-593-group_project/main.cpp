@@ -25,7 +25,8 @@ int main(int argc, const char * argv[]) {
     Player *player2=new Player_random;
     Player *player3=new Player_greedy;
     Player *player4=new Player_awesome(wc);
-    Administer a(player4,player3);
+    Player *player5=new Player_thinker(0);
+    Administer a(player4,player5);
     //    a.playStepByStep();
     a.factory();
     return 0;

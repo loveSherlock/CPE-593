@@ -14,15 +14,29 @@
 class Player_thinker: public Player{
 private:
     int depth;
-    int calculate(int n,pair<int,int> pos)
+    int calculate_mobility(vector<vector<int>> sta,pair<int,int> pos,bool t)//走出某步之后的局面评分－－一定要确认pos是可走的－－行动力评价
     {
-        Board *b=new Board(this->status);
-        
-        
-        
-        return 1;
+        Board *b=new Board(sta);
+        b->setChess(pos,t);
+        int ans=0;
+        vector<pair<int,int>> optionalPositionList=b->optionalPosition(!t);
+        for(pair<int,int>temp:optionalPositionList)
+        {
+            ans+=weight[temp.first][temp.second];
+        }
+        if(turn==t)
+            return -ans;
+        else
+            return ans;
     }
-public:
+    int calculate(vector<vector<int>> sta,pair<int,int> pos,bool t)
+    {
+        int ans=0;
+        //行动力评分＋不动点评分＋。。。可以加权值
+        ans+=calculate_mobility(sta, pos, t);
+        return ans;
+    }
+    public:
     Player_thinker(int d)
     {
         depth=d;
@@ -33,11 +47,20 @@ public:
     }
     pair<int,int> chosePosition()
     {
+        int value=INT_MIN;
+        int chose=0;
         int length=(int)optionPosition.size();
         for(int i=0;i<length;i++)
         {
             //对每一个走法进行depth层递归计算每一个的值
+            int temp=calculate(this->status,optionPosition[i], turn);
+            if(temp>value)
+            {
+                value=temp;
+                chose=i;
+            }
         }
+        return optionPosition[chose];
     }
 };
 #endif /* Player_thinker_h */

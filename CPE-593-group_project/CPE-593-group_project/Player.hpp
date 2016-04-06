@@ -35,12 +35,32 @@ protected:
     vector<vector<int>> status;
     vector<pair<int,int>> optionPosition;
     bool turn;
+    vector<vector<int>> weight;
+    void read(){
+        ifstream infile;
+        infile.open("weight.txt");
+        if(infile.fail())
+            cout<<"open fail!"<<endl;
+        weight = vector<vector<int>>(8,vector<int>(8,0));
+        for(int i=0;i<8;i++)
+        {
+            string temp;
+            getline(infile,temp);
+            stringstream x;
+            x << temp;
+            for(int j=0;j<8;j++)
+            {
+                int w;
+                x >> w;
+                weight[i][j]=w;
+            }
+        }
+        infile.close();
+    }
 public:
     Player(){
-       
+        read();
     }
-//    virtual void findOption(const vector<pair<int,int>> &optionPosition)=0;
-//    virtual void getSituation(const vector<vector<int>>&status,bool turn)=0;
     virtual pair<int,int> chosePosition()=0;
     virtual string getName()=0;
     void getSituation(const vector<vector<int>>&stat,bool t)
