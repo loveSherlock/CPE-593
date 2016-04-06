@@ -79,10 +79,17 @@ public:
         board=new Board();
         turn=0;
     }
+    Administer(Player *p1,Player *p2,vector<vector<int>> b,bool t)
+    {
+        player1=p1;
+        player2=p2;
+        board=new Board(b);
+        turn=t;
+    }
     void playStepByStep()
     {
-        board=new Board();
-        turn=0;
+        //board=new Board();
+        //turn=0;
         while(run());
         checkWinner();
     }

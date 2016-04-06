@@ -11,9 +11,6 @@
 #include "Player.hpp"
 class Player_greedy:public Player{
 private:
-//    vector<vector<int>> status;
-//    vector<pair<int,int>> optionPosition;
-//    bool turn;
     int count()
     {
         int player1=0;

@@ -5,6 +5,8 @@
 //  Created by FANXUEZHOU on 16/3/31.
 //  Copyright © 2016年 FANXUEZHOU. All rights reserved.
 //
+#ifndef Board_h
+#define Board_h
 #include <iostream>
 #include <string.h>
 #include <cstring>
@@ -58,7 +60,7 @@ private:
     }
     bool check_below(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
-        if(position.first==7)
+        if(position.first>=6)
             return false;
         if(status[position.first+1][position.second]==10 || status[position.first+1][position.second]==turn)
             return false;
@@ -84,7 +86,7 @@ private:
     bool check_left(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
-        if(position.second==0)
+        if(position.second<=1)
             return flag;
         if(status[position.first][position.second-1]==10 || status[position.first][position.second-1]==turn)
             return flag;
@@ -109,7 +111,7 @@ private:
     bool check_right(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
-        if(position.second==7)
+        if(position.second>=6)
             return flag;
         if(status[position.first][position.second+1]==10 || status[position.first][position.second+1]==turn)
             return flag;
@@ -134,7 +136,7 @@ private:
     bool check_top_left(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
-        if(position.first==0 || position.second==0)
+        if(position.first<=1 || position.second<=1)
             return flag;
         if(status[position.first-1][position.second-1]==10 || status[position.first-1][position.second-1]==turn)
             return flag;
@@ -160,7 +162,7 @@ private:
     bool check_top_right(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
-        if(position.first==0 || position.second==7)
+        if(position.first<=1 || position.second>=6)
             return flag;
         if(status[position.first-1][position.second+1]==10 || status[position.first-1][position.second+1]==turn)
             return flag;
@@ -186,7 +188,7 @@ private:
     bool check_bottom_left(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
-        if(position.first==7 || position.second==0)
+        if(position.first>=6 || position.second<=1)
             return flag;
         if(status[position.first+1][position.second-1]==10 || status[position.first+1][position.second-1]==turn)
             return flag;
@@ -212,7 +214,7 @@ private:
     bool check_bottom_right(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
         bool flag=false;
-        if(position.first==7 || position.second==7)
+        if(position.first>=6 || position.second>=6)
             return flag;
         if(status[position.first+1][position.second+1]==10 || status[position.first+1][position.second+1]==turn)
             return flag;
@@ -293,7 +295,10 @@ public:
         status[4][4]=1;
         status[3][4]=0;
         status[4][3]=0;
-        //turn=0;
+    }
+    Board(vector<vector<int>> b)
+    {
+        status=b;
     }
     bool testValid(pair<int,int>position,bool turn)
     {
@@ -348,10 +353,6 @@ public:
         status[position.first][position.second]=turn;
         updateBoard(position,turn);
     }
-//    void changeTurn()//更换执方
-//    {
-//        turn=!turn;
-//    }
     bool isAnyValid()
     {
         for(int i=0;i<8;i++)
@@ -442,5 +443,5 @@ public:
         cout <<endl;
     }
 };
-
+#endif
 
