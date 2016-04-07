@@ -13,6 +13,7 @@
 #include "Weight_chart_fixed.hpp"
 #include "Player_awesome.hpp"
 #include "Player_thinker.hpp"
+#include "Player_learner.h"
 using namespace::std;
 
 int main(int argc, const char * argv[]) {
@@ -26,8 +27,9 @@ int main(int argc, const char * argv[]) {
     Player *player3=new Player_greedy;
     Player *player4=new Player_awesome(wc);
     Player *player5=new Player_thinker(0);
-    Administer a(player1,player5);
-    a.playStepByStep();
-    //a.factory();
+    Player *player6=new Player_learner;
+    Administer a(player2,player4);
+    //    a.playStepByStep();
+    a.factory();
     return 0;
 }

@@ -9,4 +9,5 @@ dependencies: \
   /Users/fanxz/GitHub/CPE-593/CPE-593-group_project/CPE-593-group_project/Weight_chart_fixed.hpp \
   /Users/fanxz/GitHub/CPE-593/CPE-593-group_project/CPE-593-group_project/Weight_chart.hpp \
   /Users/fanxz/GitHub/CPE-593/CPE-593-group_project/CPE-593-group_project/Player_awesome.hpp \
-  /Users/fanxz/GitHub/CPE-593/CPE-593-group_project/CPE-593-group_project/Player_thinker.hpp
+  /Users/fanxz/GitHub/CPE-593/CPE-593-group_project/CPE-593-group_project/Player_thinker.hpp \
+  /Users/fanxz/GitHub/CPE-593/CPE-593-group_project/CPE-593-group_project/Player_learner.h

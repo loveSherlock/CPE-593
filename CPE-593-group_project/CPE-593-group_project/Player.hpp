@@ -73,5 +73,9 @@ public:
     {
         optionPosition=OP;
     }
+    virtual void training(bool win)
+    {
+        
+    }
 };
 #endif

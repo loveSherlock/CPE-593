@@ -91,7 +91,7 @@ private:
             return flag;
         if(status[position.first][position.second-1]==10 || status[position.first][position.second-1]==turn)
             return flag;
-                int j=position.second-2;
+        int j=position.second-2;
         for(;j>=0;j--)
         {
             if(status[position.first][j]==turn)
@@ -351,8 +351,8 @@ public:
     }
     int checkWinner(int &player1, int &player2)
     {
-//        int player1=0;
-//        int player2=0;
+        //        int player1=0;
+        //        int player2=0;
         for(int i=0;i<8;i++)
         {
             for(int j=0;j<8;j++)
