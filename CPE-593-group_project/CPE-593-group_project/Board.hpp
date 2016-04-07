@@ -32,6 +32,7 @@ class Board{
 private:
     vector<vector<int>> status;//0--黑棋 1--白棋 10--空
     vector<pair<int,int>> sequence;//以下棋子的序列（只存放下子的位置）用于悔棋
+    vector<bool>sequence_turn;//配套存放棋子的执方
     //bool turn;//当前执方 0--黑棋 1--白棋
     bool check_above(vector<vector<bool>>&needChange,pair<int,int>position,bool turn)
     {
@@ -250,41 +251,23 @@ private:
     }
     void updateBoard(pair<int,int>position,bool turn)//某一步棋之后更新棋盘状态
     {
-//        int i=position.first;
-//        int j=position.second;
         vector<vector<bool>> needChange(8,vector<bool>(8,false));//false 不改变 true 改变为当前执方
         //检查正上方
         check_above(needChange, position,turn);
-//        changeBoard(needChange);
-//        display();
         //检查正下方
         check_below(needChange, position,turn);
-//        changeBoard(needChange);
-//        display();
         //检查左边
         check_left(needChange, position,turn);
-//        changeBoard(needChange);
-//        display();
         //检查右边
         check_right(needChange, position,turn);
-//        changeBoard(needChange);
-//        display();
         //左上
         check_top_left(needChange, position,turn);
-//        changeBoard(needChange);
-//        display();
         //右上
         check_top_right(needChange, position,turn);
-//        changeBoard(needChange);
-//        display();
         //左下
         check_bottom_left(needChange, position,turn);
-//        changeBoard(needChange);
-//        display();
         //右下
         check_bottom_right(needChange,position,turn);
-//        changeBoard(needChange);
-//        display();
         changeBoard(needChange,turn);
     }
 public:
@@ -350,6 +333,7 @@ public:
     void setChess(pair<int,int>position,bool turn)
     {
         sequence.push_back(position);
+        sequence_turn.push_back(turn);
         status[position.first][position.second]=turn;
         updateBoard(position,turn);
     }
@@ -365,10 +349,10 @@ public:
         }
         return false;
     }
-    int checkWinner()
+    int checkWinner(int &player1, int &player2)
     {
-        int player1=0;
-        int player2=0;
+//        int player1=0;
+//        int player2=0;
         for(int i=0;i<8;i++)
         {
             for(int j=0;j<8;j++)
@@ -379,13 +363,46 @@ public:
                     player2++;
             }
         }
-        cout <<"player1 : player2 = "<<player1<<" : "<<player2<<endl;
+        //cout <<"player1 : player2 = "<<player1<<" : "<<player2<<endl;
         if(player1>player2)
             return 1;
         else if(player2>player1)
             return 2;
         else
             return 0;
+    }
+    void reappear()
+    {
+        status=vector<vector<int>>(8,vector<int>(8,10));
+        status[3][3]=1;
+        status[4][4]=1;
+        status[3][4]=0;
+        status[4][3]=0;
+        vector<pair<int,int>> seq=sequence;//以下棋子的序列（只存放下子的位置）用于悔棋
+        vector<bool>seq_turn=sequence_turn;//配套存放棋子的执方
+        sequence.clear();
+        sequence_turn.clear();
+        for(int i=0;i<seq.size();i++)
+        {
+            setChess(seq[i], seq_turn[i]);
+        }
+    }
+    bool undo(bool turn)
+    {
+        bool flag=false;
+        while(sequence.size() && sequence_turn.size() && sequence_turn.back()!=turn)
+        {
+            sequence.pop_back();
+            sequence_turn.pop_back();
+        }
+        if(sequence_turn.size() && sequence_turn.size())
+        {
+            sequence.pop_back();
+            sequence_turn.pop_back();
+            flag=true;
+            reappear();
+        }
+        return flag;
     }
     void display()
     {

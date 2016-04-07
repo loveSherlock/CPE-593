@@ -29,6 +29,24 @@ private:
         turn=!turn;
         return true;
     }
+    bool isSecretCode(pair<int,int>pos)
+    {
+        if(pos.first==-1 && pos.second==-1)
+            return true;
+        return false;
+    }
+    void secretCode(pair<int,int>code)
+    {
+        if(code.first==-1 && code.second==-1)//悔棋
+        {
+            bool flag=board->undo(turn);
+            if(flag)
+                cout <<"undo it!"<<endl;
+            else
+                cout <<"can't do that!"<<endl;
+            turn=!turn;
+        }
+    }
     bool checkAndSet()
     {
         vector<pair<int,int>> temp;//可能的选择位置
@@ -39,11 +57,14 @@ private:
         !turn?player1->findOption(temp):player2->findOption(temp);
         !turn?player1->getSituation(board->getSitution(), turn):player2->getSituation(board->getSitution(), turn);
         !turn?tempPosition=player1->chosePosition():tempPosition=player2->chosePosition();
-        while (!board->testValid(tempPosition,turn))//返回不合法，可以改成n次之后自动选一个位置?
+        while (!board->testValid(tempPosition,turn) && !isSecretCode(tempPosition))//返回不合法，可以改成n次之后自动选一个位置?
         {
             !turn?tempPosition=player1->chosePosition():tempPosition=player2->chosePosition();
         }
-        board->setChess(tempPosition,turn);
+        if(isSecretCode(tempPosition))
+            secretCode(tempPosition);
+        else
+            board->setChess(tempPosition,turn);
         return true;
     }
     bool run()
@@ -64,7 +85,10 @@ private:
     }
     void checkWinner()
     {
-        int ans=board->checkWinner();
+        int p1=0;
+        int p2=0;
+        int ans=board->checkWinner(p1,p2);
+        cout <<"player1 : player2 = "<<p1<<" : "<<p2<<endl;
         if(ans==0)
             cout<<"DRAW!!!"<<endl;
         if(ans==1)
@@ -103,8 +127,10 @@ public:
             repeat--;
             board=new Board();
             turn=0;
+            int p1=0;
+            int p2=0;
             while(run_for_factory());
-            int temp=board->checkWinner();
+            int temp=board->checkWinner(p1,p2);
             if(temp==1)
                 pl1++;
             else if(temp==2)
