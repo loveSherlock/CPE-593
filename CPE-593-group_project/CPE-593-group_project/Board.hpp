@@ -379,6 +379,7 @@ public:
                     player2++;
             }
         }
+        cout <<"player1 : player2 = "<<player1<<" : "<<player2<<endl;
         if(player1>player2)
             return 1;
         else if(player2>player1)
