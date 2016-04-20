@@ -14,6 +14,7 @@
 #include "Player_awesome.hpp"
 #include "Player_thinker.hpp"
 #include "Player_learner.h"
+#include "Player_deepthinker.h"
 using namespace::std;
 
 int main(int argc, const char * argv[]) {

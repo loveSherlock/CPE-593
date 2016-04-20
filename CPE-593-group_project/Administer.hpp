@@ -5,6 +5,8 @@
 //  Created by FANXUEZHOU on 16/4/2.
 //  Copyright © 2016年 FANXUEZHOU. All rights reserved.
 //
+#ifndef Administer_hpp
+#define Administer_hpp
 #include "Player.hpp"
 #include "Board.hpp"
 class Administer{
@@ -140,3 +142,4 @@ public:
         cout << "player2-"<<player2->getName()<<" win "<< pl2<<" times."<<endl;
     }
 };
+#endif

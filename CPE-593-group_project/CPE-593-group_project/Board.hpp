@@ -326,7 +326,7 @@ public:
         }
         return ans;
     }
-    const vector<vector<int>>& getSitution()
+    vector<vector<int>> getSitution()
     {
         return status;
     }
