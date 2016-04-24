@@ -121,7 +121,7 @@ public:
     }
     void factory()
     {
-        int repeat=100;
+        int repeat=10;
         int pl1=0;
         int pl2=0;
         while(repeat)

@@ -29,8 +29,9 @@ int main(int argc, const char * argv[]) {
     Player *player4=new Player_awesome(wc);
     Player *player5=new Player_thinker(0);
     Player *player6=new Player_learner;
-    Administer a(player2,player4);
-    //    a.playStepByStep();
-    a.factory();
+    Player *player7=new Player_deepthinker(2);
+    Administer a(player7,player4);
+    a.playStepByStep();
+    //a.factory();
     return 0;
 }
