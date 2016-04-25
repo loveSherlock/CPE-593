@@ -315,6 +315,39 @@ public:
     {
         status=b;
     }
+    Board(string path)
+    {
+        ifstream infile;
+        infile.open(path);
+        if(infile.fail())
+        {
+            cout << "open fail!"<<endl;
+            cout << "creat a new board!"<<endl;
+        }
+        else
+        {
+            cout << "continue the saved game!"<<endl;
+        }
+        string s;
+        while(!infile.eof())
+        {
+            getline(infile,s);
+            int x;
+            int y;
+            bool turn;
+            stringstream temp;
+            temp << s;
+            temp >>x;
+            temp >>y;
+            temp >>turn;
+            pair<int,int>position;
+            position.first=x;
+            position.second=y;
+            sequence.push_back(position);
+            sequence_turn.push_back(turn);
+        }
+        reappear();
+    }
     bool testValid(pair<int,int>position,bool turn)
     {
         bool flag=false;
@@ -492,6 +525,17 @@ public:
         cout <<endl;
         cout <<endl;
     }
+    void save_board(vector<pair<int,int>> sequence,vector<bool> sequence_turn)
+    {
+        ofstream fp;
+        fp.open("output.txt");
+        for(int i=0;i<sequence.size();i++)
+        {
+            fp<<sequence[i].first <<" "<<sequence[i].second<<" "<<sequence_turn[i]<<endl;
+        }
+        fp.close();
+    }
+
 };
 #endif
 
