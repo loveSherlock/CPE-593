@@ -61,7 +61,7 @@ private:
         !turn?tempPosition=player1->chosePosition():tempPosition=player2->chosePosition();
         
         //test
-        cout << "position:"<<tempPosition.first+1<<","<<tempPosition.second+1<<endl;
+        //cout << "position:"<<tempPosition.first+1<<","<<tempPosition.second+1<<endl;
         while (!board->testValid(tempPosition,turn) && !isSecretCode(tempPosition))//返回不合法，可以改成n次之后自动选一个位置?
         {
             !turn?tempPosition=player1->chosePosition():tempPosition=player2->chosePosition();

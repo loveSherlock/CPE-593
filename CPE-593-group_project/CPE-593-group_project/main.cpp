@@ -28,11 +28,12 @@ int main(int argc, const char * argv[]) {
     Player *player2=new Player_random;
     Player *player3=new Player_greedy;
     Player *player4=new Player_awesome(wc);
-    Player *player5=new Player_thinker();
+    Player *player5=new Player_thinker;
     Player *player6=new Player_learner;
     Player *player7=new Player_deepthinker(2);
     Player *player8=new Player_deepAwesome(3,wc);
-    Administer a(player8,player1);
+    Player *player9=new Player_deepAwesome(4,wc);
+    Administer a(player7,player8);
     a.playStepByStep();
     //a.factory(10);
     return 0;
