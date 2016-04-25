@@ -21,6 +21,8 @@ public:
     }
     
     virtual pair<int, int> getBestPos(const vector<pair<int, int>> &positionList) = 0;
+    
+    virtual int getWeightByPos(pair<int, int> p) = 0;
 };
 
 #endif /* Weight_chart_h */

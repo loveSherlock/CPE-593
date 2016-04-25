@@ -38,12 +38,16 @@ private:
     {
         if(position.first<=1)
             return false;
-        if(status[position.first-1][position.second]==10 || status[position.first-1][position.second]==turn)
+        if(status[position.first-1][position.second]!=(!turn))
             return false;
         bool flag=false;
         int i=position.first-2;
         for(;i>=0;i--)
         {
+            if(status[i][position.second]==10)
+            {
+                return false;
+            }
             if(status[i][position.second]==turn)
             {
                 flag=true;
@@ -63,12 +67,16 @@ private:
     {
         if(position.first>=6)
             return false;
-        if(status[position.first+1][position.second]==10 || status[position.first+1][position.second]==turn)
+        if(status[position.first+1][position.second]!=(!turn))
             return false;
         bool flag=false;
         int i=position.first+2;
         for(;i<8;i++)
         {
+            if(status[i][position.second]==10)
+            {
+                return false;
+            }
             if(status[i][position.second]==turn)
             {
                 flag=true;
@@ -94,6 +102,10 @@ private:
         int j=position.second-2;
         for(;j>=0;j--)
         {
+            if(status[position.first][j]==10)
+            {
+                return false;
+            }
             if(status[position.first][j]==turn)
             {
                 flag=true;
@@ -119,6 +131,10 @@ private:
         int j=position.second+2;
         for(;j<8;j++)
         {
+            if(status[position.first][j]==10)
+            {
+                return false;
+            }
             if(status[position.first][j]==turn)
             {
                 flag=true;
@@ -145,6 +161,10 @@ private:
         int j=position.second-2;
         for(;i>=0 && j>=0;i--,j--)
         {
+            if(status[i][j]==10)
+            {
+                return false;
+            }
             if(status[i][j]==turn)
             {
                 flag=true;
@@ -171,6 +191,10 @@ private:
         int j=position.second+2;
         for(;i>=0 && j<8;i--,j++)
         {
+            if(status[i][j]==10)
+            {
+                return false;
+            }
             if(status[i][j]==turn)
             {
                 flag=true;
@@ -197,6 +221,10 @@ private:
         int j=position.second-2;
         for(;i<8 && j>=0;i++,j--)
         {
+            if(status[i][j]==10)
+            {
+                return false;
+            }
             if(status[i][j]==turn)
             {
                 flag=true;
@@ -223,6 +251,10 @@ private:
         int j=position.second+2;
         for(;i<8 && j<8;i++,j++)
         {
+            if(status[i][j]==10)
+            {
+                return false;
+            }
             if(status[i][j]==turn)
             {
                 flag=true;

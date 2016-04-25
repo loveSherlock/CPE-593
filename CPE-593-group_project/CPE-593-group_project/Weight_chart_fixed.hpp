@@ -6,6 +6,7 @@
 //  Copyright © 2016年 FANXUEZHOU. All rights reserved.
 //
 
+
 #ifndef Weight_chart_fixed_h
 #define Weight_chart_fixed_h
 #include <vector>
@@ -63,6 +64,10 @@ public:
         int randomIndex = arc4random() % candidateList.size();
         pair<int, int> sp = candidateList[randomIndex];
         return sp;
+    }
+    
+    int getWeightByPos(pair<int, int> p) {
+        return board[p.first][p.second];
     }
 };
 

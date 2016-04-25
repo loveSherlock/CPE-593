@@ -13,7 +13,7 @@
 
 class Player_thinker: public Player{
 private:
-    int depth;
+    //int depth;
     int calculate_mobility(vector<vector<int>> sta,pair<int,int> pos,bool t)//走出某步之后的局面评分－－一定要确认pos是可走的－－行动力评价
     {
         Board *b=new Board(sta);
@@ -37,9 +37,9 @@ private:
         return ans;
     }
     public:
-    Player_thinker(int d)
+    Player_thinker()
     {
-        depth=d;
+        //depth=d;
         name="thinker_player";
     }
     string getName(){

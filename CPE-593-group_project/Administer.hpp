@@ -59,6 +59,9 @@ private:
         !turn?player1->findOption(temp):player2->findOption(temp);
         !turn?player1->getSituation(board->getSitution(), turn):player2->getSituation(board->getSitution(), turn);
         !turn?tempPosition=player1->chosePosition():tempPosition=player2->chosePosition();
+        
+        //test
+        cout << "position:"<<tempPosition.first+1<<","<<tempPosition.second+1<<endl;
         while (!board->testValid(tempPosition,turn) && !isSecretCode(tempPosition))//返回不合法，可以改成n次之后自动选一个位置?
         {
             !turn?tempPosition=player1->chosePosition():tempPosition=player2->chosePosition();
@@ -119,9 +122,8 @@ public:
         while(run());
         checkWinner();
     }
-    void factory()
+    void factory(int repeat)
     {
-        int repeat=10;
         int pl1=0;
         int pl2=0;
         while(repeat)

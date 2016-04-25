@@ -34,6 +34,7 @@
 		2B69D8711CB5478200354EDA /* Player_thinker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player_thinker.hpp; sourceTree = "<group>"; };
 		2B69D8721CB608A800354EDA /* Player_learner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player_learner.h; sourceTree = "<group>"; };
 		2B6CC3621CC7B9900063CBE8 /* Player_deepthinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player_deepthinker.h; sourceTree = "<group>"; };
+		2B6CC3991CCE4D4D0063CBE8 /* Player_deepAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player_deepAwesome.h; sourceTree = "<group>"; };
 		2B9038C81CB3653E001D8311 /* Weight_chart.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Weight_chart.hpp; sourceTree = "<group>"; };
 		2B9038C91CB36565001D8311 /* Player_awesome.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player_awesome.hpp; sourceTree = "<group>"; };
 		2B9038CA1CB36583001D8311 /* Weight_chart_fixed.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Weight_chart_fixed.hpp; sourceTree = "<group>"; };
@@ -73,15 +74,16 @@
 				2B310B5C1CB0C2E9003E62D0 /* Administer.hpp */,
 				2B310B571CAD6643003E62D0 /* Board.hpp */,
 				2B310B591CAD9697003E62D0 /* Player.hpp */,
+				2B9038C81CB3653E001D8311 /* Weight_chart.hpp */,
+				2B9038CA1CB36583001D8311 /* Weight_chart_fixed.hpp */,
 				2B310B5A1CADA25F003E62D0 /* Player_human.hpp */,
 				2B310B5D1CB2A759003E62D0 /* Player_random.hpp */,
 				2B310B5F1CB2C335003E62D0 /* Player_greedy.hpp */,
 				2B9038C91CB36565001D8311 /* Player_awesome.hpp */,
-				2B9038C81CB3653E001D8311 /* Weight_chart.hpp */,
-				2B9038CA1CB36583001D8311 /* Weight_chart_fixed.hpp */,
+				2B69D8721CB608A800354EDA /* Player_learner.h */,
 				2B69D8711CB5478200354EDA /* Player_thinker.hpp */,
 				2B6CC3621CC7B9900063CBE8 /* Player_deepthinker.h */,
-				2B69D8721CB608A800354EDA /* Player_learner.h */,
+				2B6CC3991CCE4D4D0063CBE8 /* Player_deepAwesome.h */,
 			);
 			path = "CPE-593-group_project";
 			sourceTree = "<group>";

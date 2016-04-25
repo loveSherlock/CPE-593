@@ -15,6 +15,7 @@
 #include "Player_thinker.hpp"
 #include "Player_learner.h"
 #include "Player_deepthinker.h"
+#include "Player_deepAwesome.h"
 using namespace::std;
 
 int main(int argc, const char * argv[]) {
@@ -27,11 +28,12 @@ int main(int argc, const char * argv[]) {
     Player *player2=new Player_random;
     Player *player3=new Player_greedy;
     Player *player4=new Player_awesome(wc);
-    Player *player5=new Player_thinker(0);
+    Player *player5=new Player_thinker();
     Player *player6=new Player_learner;
     Player *player7=new Player_deepthinker(2);
-    Administer a(player7,player4);
+    Player *player8=new Player_deepAwesome(3,wc);
+    Administer a(player8,player1);
     a.playStepByStep();
-    //a.factory();
+    //a.factory(10);
     return 0;
 }

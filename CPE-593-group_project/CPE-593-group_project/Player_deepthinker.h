@@ -159,7 +159,7 @@ private:
                 vector<pair<int,int>> temp=board1.optionalPosition(!turn);
                 if(temp.size()!=0)
                 {
-                    Player_thinker *player = new Player_thinker(0);
+                    Player_thinker *player = new Player_thinker();
                     player->findOption(board1.optionalPosition(!turn));
                     player->getSituation(board1.getSitution(), !turn);
                     board1.setChess(player->chosePosition(), !turn);
