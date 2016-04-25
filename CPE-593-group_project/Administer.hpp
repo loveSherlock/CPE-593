@@ -35,6 +35,8 @@ private:
     {
         if(pos.first==-1 && pos.second==-1)
             return true;
+        if(pos.first==10 && pos.second==10)
+            return true;
         return false;
     }
     void secretCode(pair<int,int>code)
@@ -46,8 +48,13 @@ private:
                 cout <<"undo it!"<<endl;
             else
                 cout <<"can't do that!"<<endl;
-            turn=!turn;
         }
+        if(code.first==10 && code.first==10)//save
+        {
+            board->save_board();
+            cout << "save this game in the output.txt"<<endl;
+        }
+        turn=!turn;
     }
     bool checkAndSet()
     {
@@ -114,6 +121,45 @@ public:
         player2=p2;
         board=new Board(b);
         turn=t;
+    }
+    Administer(Player *p1,Player *p2,string path)
+    {
+        player1=p1;
+        player2=p2;
+        board=new Board();
+        turn=0;
+        ifstream infile;
+        infile.open(path);
+        if(infile.fail())
+        {
+            cout << "open fail!"<<endl;
+            cout << "creat a new board!"<<endl;
+        }
+        else
+        {
+            cout << "reappear the saved game!"<<endl;
+            string s;
+            while(!infile.eof())
+            {
+                getline(infile,s);
+                int x;
+                int y;
+                stringstream temp;
+                temp << s;
+                temp >>x;
+                temp >>y;
+                temp >>turn;
+                pair<int,int>position;
+                position.first=x;
+                position.second=y;
+                board->setChess(position, turn);
+                board->display();
+            }
+            turn=!turn;
+            cout << "continue the saved game!"<<endl;
+            playStepByStep();
+        }
+
     }
     void playStepByStep()
     {

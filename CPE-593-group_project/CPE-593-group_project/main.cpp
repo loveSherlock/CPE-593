@@ -32,9 +32,10 @@ int main(int argc, const char * argv[]) {
     Player *player6=new Player_learner;
     Player *player7=new Player_deepthinker(2);
     Player *player8=new Player_deepAwesome(3,wc);
-    Player *player9=new Player_deepAwesome(4,wc);
-    Administer a(player7,player8);
-    a.playStepByStep();
+    Player *player9=new Player_deepAwesome(2,wc);
+    Administer a(player8,player1);
+    Administer b(player8,player4,"output.txt");
+    //a.playStepByStep();
     //a.factory(10);
     return 0;
 }

@@ -525,7 +525,7 @@ public:
         cout <<endl;
         cout <<endl;
     }
-    void save_board(vector<pair<int,int>> sequence,vector<bool> sequence_turn)
+    void save_board()
     {
         ofstream fp;
         fp.open("output.txt");
