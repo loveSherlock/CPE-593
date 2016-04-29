@@ -16,6 +16,7 @@
 #include "Player_learner.h"
 #include "Player_deepthinker.h"
 #include "Player_deepAwesome.h"
+#include "Player_deepAwesomeWithFixedWeight.h"
 using namespace::std;
 
 int main(int argc, const char * argv[]) {
@@ -33,9 +34,10 @@ int main(int argc, const char * argv[]) {
     Player *player7=new Player_deepthinker(2);
     Player *player8=new Player_deepAwesome(3,wc);
     Player *player9=new Player_deepAwesome(2,wc);
-    Administer a(player8,player1);
-    Administer b(player8,player4,"output.txt");
-    //a.playStepByStep();
+    Player *player10=new Player_deepAwesomeWithFixedWeight(3,wc);
+    Administer a(player10,player8);
+    //Administer b(player1,player8,"output.txt");
+    a.playStepByStep();
     //a.factory(10);
     return 0;
 }

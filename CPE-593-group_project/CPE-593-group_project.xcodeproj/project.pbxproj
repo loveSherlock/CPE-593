@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B11E2E01CD24E30008EB5E6 /* Player_deepAwesomeWithFixedWeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Player_deepAwesomeWithFixedWeight.h; path = ../Player_deepAwesomeWithFixedWeight.h; sourceTree = "<group>"; };
 		2B310B4C1CAD5D87003E62D0 /* CPE-593-group_project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CPE-593-group_project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B310B4F1CAD5D87003E62D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2B310B571CAD6643003E62D0 /* Board.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Board.hpp; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 				2B69D8711CB5478200354EDA /* Player_thinker.hpp */,
 				2B6CC3621CC7B9900063CBE8 /* Player_deepthinker.h */,
 				2B6CC3991CCE4D4D0063CBE8 /* Player_deepAwesome.h */,
+				2B11E2E01CD24E30008EB5E6 /* Player_deepAwesomeWithFixedWeight.h */,
 			);
 			path = "CPE-593-group_project";
 			sourceTree = "<group>";

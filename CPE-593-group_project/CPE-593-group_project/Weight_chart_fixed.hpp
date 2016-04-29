@@ -69,6 +69,11 @@ public:
     int getWeightByPos(pair<int, int> p) {
         return board[p.first][p.second];
     }
+    
+    void setWeightByPos(pair<int,int> p)
+    {
+        board[p.first][p.second]=abs(board[p.first][p.second]);
+    }
 };
 
 
