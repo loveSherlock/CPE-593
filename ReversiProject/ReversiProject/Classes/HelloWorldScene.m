@@ -170,7 +170,7 @@ static ReversiData *_reversiData;
 
 -(void)clickChangePlayer1
 {
-    CCButton *button1 = [CCButton buttonWithTitle:@"Huaman"];
+    CCButton *button1 = [CCButton buttonWithTitle:@"Human"];
     CCButton *button2 = [CCButton buttonWithTitle:@"Level 1"];
     CCButton *button3 = [CCButton buttonWithTitle:@"Level 2"];
     CCButton *button4 = [CCButton buttonWithTitle:@"Level 3"];
@@ -188,7 +188,7 @@ static ReversiData *_reversiData;
 
 -(void)clickChangePlayer2
 {
-    CCButton *button1 = [CCButton buttonWithTitle:@"Huaman"];
+    CCButton *button1 = [CCButton buttonWithTitle:@"Human"];
     CCButton *button2 = [CCButton buttonWithTitle:@"Level 1"];
     CCButton *button3 = [CCButton buttonWithTitle:@"Level 2"];
     CCButton *button4 = [CCButton buttonWithTitle:@"Level 3"];
