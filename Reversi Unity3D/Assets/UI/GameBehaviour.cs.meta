@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f17e7397c095c7f44984d27fa5db359b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - BoardTile: {fileID: 100000, guid: ffc36a3c5dbbb6940ab26818f9ed9c5c, type: 2}
+  - Piece: {fileID: 100000, guid: cfb6c4cdaa3ac5142af5f4251f00affe, type: 2}
+  - Text: {fileID: 100000, guid: e389af59487b5e84bbe2bdffc68be578, type: 2}
+  - GuiSkin: {fileID: 11400000, guid: 15fc501dc5d416247b571a1e49936f25, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
